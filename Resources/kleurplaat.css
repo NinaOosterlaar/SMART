@@ -1261,36 +1261,114 @@ body {
 
   .column-flexbox {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: stretch;
+    margin: 0 0.3rem;
+    flex: 0.5;
   }
 
   .goal-box {
-    flex: 1;
     display: flex;
     flex-wrap: wrap;
     flex-flow: column;
     background-color: #bab2fe;
-    margin: 10px;
-    padding: 10px;
+    margin: 0.5rem;
+    padding: 0.6rem;
   }
 
   .goal-box-header {
     display: flex;
     justify-content: space-between;
     flex:1;
+    flex-direction: row;
+    align-items: baseline;
+  }
+
+  .goal-box-title-flexbox {
+    display: flex;
+    align-items: center;
+    flex:0.8;
   }
 
   .goal-box-title {
-    justify-self: flex-start;
+    font-size: large;
   }
 
   .button-flexbox {
-    justify-self: flex-start;
+    flex:1;
+  }
+
+  .goal-checkbox {
+    display: block;
+    position: relative;
+    padding-left: 40px;
+    margin-bottom: 18px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  /* Hide the browser's default checkbox */
+  .goal-checkbox input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  
+  /* Create a custom checkbox */
+  .checkmark {
+    position: absolute;
+    margin: 0;
+    height: 15px;
+    width: 15px;
+    background-color: #eee;
+  }
+  
+  /* On mouse-over, add a grey background color */
+  .goal-checkbox:hover input ~ .checkmark {
+    background-color: #ccc;
+  }
+  
+  /* When the checkbox is checked, add a blue background */
+  .goal-checkbox input:checked ~ .checkmark {
+    background-color: #2196F3;
+  }
+  
+  /* Create the checkmark/indicator (hidden when not checked) */
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  /* Show the checkmark when checked */
+  .goal-checkbox input:checked ~ .checkmark:after {
+    display: block;
+  }
+  
+  /* Style the checkmark/indicator */
+  .goal-checkbox .checkmark:after {
+    left: 4px;
+    top: 2px;
+    width: 4px;
+    height: 8px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
   }
 
   .goal-box-due-date {
     justify-self: flex-end;
+    font-style: italic;
+    font-size: small;
+    flex:0.2;
   }
 
   .goal-box-body {
@@ -1302,5 +1380,210 @@ body {
   .progress-image{
     justify-self: flex-end;
     margin-right: 10px;
+    align-self: center;
   }
 
+  .smart-letter {
+    color:#383f46;
+    font-weight: bold;
+  }
+
+  .goal-page-header {
+    display:flex;
+    flex: 1;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+
+  .row-flexbox {
+    display:flex;
+    flex-wrap: wrap;
+  }
+
+  .smart-description-box {
+    margin-left: 10px;
+    flex:0.5;
+  }
+
+.smart-title::first-letter{
+    color:#9e91ff;
+    font-weight: bold;
+}
+.smart-description {
+    margin-left: 20px;
+}
+
+.target-box {
+    display: flex;
+    flex-wrap: wrap;
+    flex-flow: column;
+    background-color: #bab2fe;
+    margin: 0.5rem;
+    padding: 0.6rem;
+    justify-content: baseline;
+  }
+
+.target-title {
+    font-size: large;
+}
+
+.checkbox-flexbox {
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+.numeric-checkbox {
+    display: inline;
+    position: relative;
+    padding-left: 35px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  /* Hide the browser's default checkbox */
+  .numeric-checkbox input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 20;
+    width: 20;
+  }
+  
+  /* Create a custom checkbox */
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 15px;
+    width: 15px;
+    background-color: #eee;
+  }
+  
+  /* On mouse-over, add a grey background color */
+  .numeric-checkbox:hover input ~ .checkmark {
+    background-color: #ccc;
+  }
+  
+  /* When the checkbox is checked, add a blue background */
+  .numeric-checkbox input:checked ~ .checkmark {
+    background-color: #2196F3;
+  }
+  
+  /* Create the checkmark/indicator (hidden when not checked) */
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  /* Show the checkmark when checked */
+  .numeric-checkbox input:checked ~ .checkmark:after {
+    display: block;
+  }
+  
+  /* Style the checkmark/indicator */
+  .numeric-checkbox .checkmark:after {
+    left: 6px;
+    top: 3px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+
+.container {
+    display: inline;
+    position: relative;
+    padding-left: 35px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  /* Hide the browser's default checkbox */
+  .container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 20;
+    width: 20;
+  }
+  
+  /* Create a custom checkbox */
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: #eee;
+  }
+  
+  /* On mouse-over, add a grey background color */
+  .container:hover input ~ .checkmark {
+    background-color: #ccc;
+  }
+  
+  /* When the checkbox is checked, add a blue background */
+  .container input:checked ~ .checkmark {
+    background-color: #2196F3;
+  }
+  
+  /* Create the checkmark/indicator (hidden when not checked) */
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  /* Show the checkmark when checked */
+  .container input:checked ~ .checkmark:after {
+    display: block;
+  }
+  
+  /* Style the checkmark/indicator */
+  .container .checkmark:after {
+    left: 6px;
+    top: 3px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+
+  .progress-target-content {
+    display: flex;
+    margin-top: 10px;
+  }
+
+  .progress-bar-flexbox {
+    background-color: #fff;
+    flex: 0.8;
+    margin: 5px;
+  }
+
+  .progress-bar {
+    width: 20%;
+    padding: 4px;
+    text-align: center;
+  }
+
+  .progress-bar-input{
+    flex:0.2;
+    width: 100%;
+    margin: 5px;
+  }
