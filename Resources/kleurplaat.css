@@ -1237,3 +1237,70 @@ body {
     visibility: visible;
   }
 
+  #dashboard-header {
+    display:flex;
+    flex: wrap;
+  }
+
+  .button-flexbox {
+    display:flex;
+    flex: wrap;
+    justify-content: flex-end;
+  }
+
+  .create-button {
+    background-color: #9e91ff;
+    padding: 5px 10px;
+    margin: 10px;
+  }
+
+  .button-link {
+    color: #fff;
+    text-decoration: none;
+  }
+
+  .column-flexbox {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+  }
+
+  .goal-box {
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    flex-flow: column;
+    background-color: #bab2fe;
+    margin: 10px;
+    padding: 10px;
+  }
+
+  .goal-box-header {
+    display: flex;
+    justify-content: space-between;
+    flex:1;
+  }
+
+  .goal-box-title {
+    justify-self: flex-start;
+  }
+
+  .button-flexbox {
+    justify-self: flex-start;
+  }
+
+  .goal-box-due-date {
+    justify-self: flex-end;
+  }
+
+  .goal-box-body {
+    display:flex;
+    flex:1;
+    justify-content: space-between;
+  }
+
+  .progress-image{
+    justify-self: flex-end;
+    margin-right: 10px;
+  }
+
