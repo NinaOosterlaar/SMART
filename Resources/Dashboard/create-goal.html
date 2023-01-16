@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Goal</title>
+
+    <link rel="stylesheet" href="../kleurplaat.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora">
+
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="main">
+            <main class="content">
+                <div class="container p-0">
+                    <div class="row justify-content-center">
+                        <div class="col-6">
+                            <div class="card my-pink-colour">
+                                <div class="header">
+                                    <h5 class="card-title ml-4 mt-3">
+                                        Create Goal
+                                        <div class="ml-n2 mt-2 mb-n1 second-attempt-line"></div>
+                                    </h5>
+                                </div>
+                                <div class="card-body">
+                                    <!-- Goal Name -->
+                                    <div class="col-12 mb-3">
+                                        <label for="goal_name" class="form-label ml-1">
+                                            Goal Name
+                                        </label>
+                                        <input type="text" class="form-control-2 mt-1" id="goal_name"
+                                            placeholder="Enter the name of your goal" required maxlength="50">
+                                    </div>
+
+                                    <!-- Due Date -->
+                                    <div class="col-12 mb-3">
+                                        <label for="Due Date" class="form-label ml-1">
+                                            Due Date
+                                        </label>
+                                        <input type="date" class="form-control-date mt-1" id="due_date" required>
+                                    </div>
+
+                                    <!-- Specific -->
+                                    <div class="col-12 mb-2">
+                                        <label for="specific" class="form-label ml-1">
+                                            Specific <div class="tooltip"><img src = "../images/help-circle.svg" alt="?"/>
+                                                <span class="tooltiptext">Make your goals specific and narrow for more effective planning</span>
+                                              </div>
+                                        </label>
+                                        <textarea class="form-control-3 mt-1" id="specific" required maxlength="100" placeholder="Explain what makes your goal specific"></textarea>
+                                    </div>
+
+                                    <!-- Measurable -->
+                                    <div class="col-12 mb-2">
+                                        <label for="measurable" class="form-label ml-1">
+                                            Measurable <div class="tooltip"><img src = "../images/help-circle.svg" alt="?"/>
+                                                <span class="tooltiptext">Define what evidence will prove you're making progress and reevaluate when necessary</span>
+                                              </div>
+                                        </label>
+                                        <textarea class="form-control-3 mt-1" id="measurable" required maxlength="100" placeholder="Explain what makes your goal measurable"></textarea>
+                                    </div>
+
+                                    <!-- Attainable -->
+                                    <div class="col-12 mb-2">
+                                        <label for="attainable" class="form-label ml-1">
+                                            Attainable <div class="tooltip"><img src = "../images/help-circle.svg" alt="?"/>
+                                                <span class="tooltiptext">Make sure you can reasonably accomplish your goal within a certain timeframe</span>
+                                              </div>
+                                        </label>
+                                        <textarea class="form-control-3 mt-1" id="attainable" required maxlength="100" placeholder="Explain what makes your goal attainable"></textarea>
+                                    </div>
+
+                                    <!-- Relevant -->
+                                    <div class="col-12 mb-2">
+                                        <label for="relevant" class="form-label ml-1">
+                                            Relevant <div class="tooltip"><img src = "../images/help-circle.svg" alt="?"/>
+                                                <span class="tooltiptext">Your goals should align with you values and long-term objectives</span>
+                                              </div>
+                                        </label>
+                                        <textarea class="form-control-3 mt-1" id="relevant" required maxlength="100" placeholder="Explain what makes your goal relevant"></textarea>
+                                    </div>
+
+                                    <!-- Time-based -->
+                                    <div class="col-12 mb-2">
+                                        <label for="time-based" class="form-label ml-1">
+                                            Time-based <div class="tooltip"><img src = "../images/help-circle.svg" alt="?"/>
+                                                <span class="tooltiptext">Set a realistic ambitious end-date for task prioritization and motivation</span>
+                                              </div>
+                                             
+                                        </label>
+                                        <textarea class="form-control-3 mt-1" id="time-based" required maxlength="100" placeholder="Explain what makes your goal time-based"></textarea>
+                                    </div>
+
+                                    <div class="col-12">
+                                        <a href="dashboard.html">
+                                        <button type="submit" class="btn btn-primary mt-4 btn-create-goal ml-6 mr-7 mb-2 my-cancel-button" formnovalidate>Cancel</button>
+                                        </a>
+
+                                        <a href="dashboard.html"></a>
+                                        <button type="submit" class="btn btn-primary mt-4 btn-create-goal ml-7 mb-2">Create Goal</button>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+
+</html>
