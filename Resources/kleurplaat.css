@@ -989,7 +989,7 @@ p {
 }
 
 .btn-bigger {
-    width: 15%;
+    min-width: 10rem;
     height: 120%;
 }
 
