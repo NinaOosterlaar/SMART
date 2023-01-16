@@ -12,7 +12,7 @@
 </head>
 
 <body>
-    <main>
+    <nav>
         <div class="goal-page-header">
             <h5 class="card-title ml-4 mt-3">
                 Goal title
@@ -23,40 +23,45 @@
         </div>
 
         <div class="ml-n2 mt-2 mb-n1 second-attempt-line"></div>
-
+    </nav>
+    <main class="mx-4 my-2">
         <!--Add target button-->
-        <div class="button-flexbox">
-            <div class="text-center mb-2 create-button">
-                <i><a href="create-goal.html" class="button-link">
-                    + Add Target
-                </a></i>
-            </div>
+
+        <div class="flex-end">
+            <div class="dropdown">
+                <button class="dropbtn text-center create-button mb-2"> + Add Target</button>
+                <div class="dropdown-content">
+                  <a href="add-target-forms/create-numerical-target.html">Numeric</a>
+                  <a href="add-target-forms/create-target.html">Task-related</a>
+                  <a href="add-target-forms/create-progress-target .html">Progress bar</a>
+                </div>
+              </div>
         </div>
 
-        <div class="row-flexbox">
+        <div class="row-flexbox mt-2">
             <!--Smart description-->
-            <div class="smart-description-box">
+            <div class="column-flexbox">
                 <h3 class="smart-title">Specific</h3>
-                <p class="smart-description">lorem ipsum</p>
+                <p class="ml-3">lorem ipsum</p>
                 <h3 class="smart-title">Time-sensitive</h3>
-                <p class="smart-description">lorem ipsum</p>
+                <p class="ml-3">lorem ipsum</p>
                 <h3 class="smart-title">Specific</h3>
-                <p class="smart-description">lorem ipsum</p>
+                <p class="ml-3">lorem ipsum</p>
                 <h3 class="smart-title">Specific</h3>
-                <p class="smart-description">lorem ipsum</p>
+                <p class="ml-3">lorem ipsum</p>
                 <h3 class="smart-title">Specific</h3>
-                <p class="smart-description">lorem ipsum</p>
+                <p class="ml-3">lorem ipsum</p>
             </div>
 
             <!--Targets-->
             <div class="column-flexbox">
 
                 <!--Target box numerical-->
-                <div class="target-box">
-                    <div class="target-title">
+                <div class="goal-box">
+                    <div class="goal-box-title">
                         Target Title
                     </div>
-                    <div class="checkbox-flexbox">
+                    <div class="row-flexbox mt-2">
                         <label class="numeric-checkbox">
                             <input type="checkbox">
                             <span class="checkmark"></span>
@@ -69,8 +74,8 @@
                 </div>
 
                 <!--Target box task-related-->
-                <div class="target-box">
-                    <label class="container">
+                <div class="goal-box">
+                    <label class="container goal-box-title">
                         <input type="checkbox" checked="checked">
                         <span class="checkmark"></span>
                         Target title
@@ -78,17 +83,14 @@
                 </div>
 
                 <!--Target box progress bar-->
-                <div class="target-box">
+                <div class="goal-box">
                     <div class="target-title">
                         Target Title
                     </div>
-                    <div class="progress-target-content">
-                        <div class="progress-bar-flexbox">
-                            <div class="progress-bar my-pink-colour">
-                                20%
-                            </div>
-                        </div>
-                        <input type="text" class="progress-bar-input">
+                    <div class="goal-box-due-date flex-end mr-2">Add</div> 
+                    <div class="row-flexbox">
+                        <input type="range" class="progress-bar-flexbox" name="" id="">
+                        <input type="number" class="progress-bar-input generic-input">
                     </div>
                 </div>
             </div>

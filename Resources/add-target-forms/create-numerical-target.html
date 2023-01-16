@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+
+    <link rel="stylesheet" href="../kleurplaat.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora">
+
+</head>
+
+<body>
+    
+    <div class="wrapper">
+        <div class="main">
+            <main class="content">
+                <div class="container p-0">
+                    <div class="row justify-content-center">
+                        <div class="col-7">
+                            <div class="card my-pink-colour">  
+                                <div class="card-header">
+                                    <h5 class="card-title  ml-2">
+                                        Add numerical target
+                                    </h5>
+                                </div>
+                                <div class="card-body">
+                                    <div class="mx-4">
+                                        <form action="">
+                                            <div class="row" style="margin-bottom: 2.5rem;">
+
+                                                <!-- Target Description -->
+                                                <div class="mb-2">
+                                                    <label for="numerical-target-description">
+                                                        Target description
+                                                        <span class="text-danger"> *</span>
+                                                    </label>
+                                                    <textarea name="numerical-target-description" id="numerical-target-description" class="generic-input mt-2" rows="4" placeholder="Your target description." required></textarea>
+                                                </div>
+                                                
+                                                <!-- Number -->
+                                                <div class="mb-2">
+                                                    <label for="numerical-target-number">
+                                                        Number
+                                                        <span class="text-danger"> *
+                                                        <div class="mt-2">
+                                                            <input type="number" class="generic-input" name="numerical-target-number" required placeholder="0">
+                                                        </div>
+                                                    
+                                                </div>
+
+                                                <!-- Buttons -->
+                                                <div class="flex-separate mt-2">
+                                                        <button type="submit" class="btn btn-primary my-cancel-button">Cancel</button>
+                                                    <button type="submit" class="btn btn-primary ">Add target</button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
