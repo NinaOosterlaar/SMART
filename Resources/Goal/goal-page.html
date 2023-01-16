@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href="kleurplaat.css">
+    <link rel="stylesheet" href="../kleurplaat.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora">
 
 </head>
@@ -14,9 +14,11 @@
 <body>
     <nav>
         <div class="goal-page-header">
+            <a href="../Dashboard/dashboard.html" class="goal-card-link">
             <h5 class="card-title ml-4 mt-3">
                 Goal title
             </h5>
+            </a>
             <div class="goal-box-due-date">
                 due date
             </div>
@@ -31,11 +33,11 @@
             <div class="dropdown">
                 <button class="dropbtn text-center create-button mb-2"> + Add Target</button>
                 <div class="dropdown-content">
-                  <a href="add-target-forms/create-numerical-target.html">Numeric</a>
-                  <a href="add-target-forms/create-target.html">Task-related</a>
-                  <a href="add-target-forms/create-progress-target .html">Progress bar</a>
+                    <a href="add-target-forms/create-numerical-target.html">Numeric</a>
+                    <a href="add-target-forms/create-target.html">Task-related</a>
+                    <a href="add-target-forms/create-progress-target .html">Progress bar</a>
                 </div>
-              </div>
+            </div>
         </div>
 
         <div class="row-flexbox mt-2">
@@ -65,11 +67,11 @@
                         <label class="numeric-checkbox">
                             <input type="checkbox">
                             <span class="checkmark"></span>
-                          </label>
-                          <label class="numeric-checkbox">
+                        </label>
+                        <label class="numeric-checkbox">
                             <input type="checkbox">
                             <span class="checkmark"></span>
-                          </label>
+                        </label>
                     </div>
                 </div>
 
@@ -79,12 +81,12 @@
                         <input type="checkbox" checked="checked">
                         <span class="checkmark"></span>
                         Target title
-                      </label>
+                    </label>
                 </div>
 
                 <!--Target box progress bar-->
                 <div class="goal-box">
-                    <div class="target-title">
+                    <div class="goal-box-title">
                         Target Title
                     </div>
                     <div class="goal-box-due-date flex-end mr-2">Add</div> 
