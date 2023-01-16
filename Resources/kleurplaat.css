@@ -1052,6 +1052,18 @@ body {
     text-align: start;
 }
 
+.form-control-login {
+    border: 1px solid #ced4da;
+    border-radius: .2rem;
+    padding: .25rem .7rem;
+    color:black;
+    background-color: #fff;
+    background-clip: padding-box;
+    appearance: none;
+    font-family: Lora;
+    text-align: start;
+}
+
 .form-control-3 {
     width: 90%;
     padding: .3rem .7rem;
