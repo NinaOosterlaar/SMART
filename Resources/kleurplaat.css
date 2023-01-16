@@ -993,7 +993,7 @@ p {
  }
 
  .btn-create-goal{
-    width: 20%;
+    max-width: 20%;
     padding: .3.3rem .7rem;
     font-size: .950rem;
  }
@@ -1237,3 +1237,6 @@ body {
     visibility: visible;
   }
 
+  .space-creation{
+    justify-content: space-between;
+  }
