@@ -994,7 +994,8 @@ p {
 }
 
 .btn-create-goal{
-    width: 20%;
+    flex:0.3;
+    min-width:8rem;
     padding: .3.3rem .7rem;
     font-size: .950rem;
 }
