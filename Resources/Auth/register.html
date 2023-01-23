@@ -83,21 +83,20 @@
 
                                                 <!-- Address Line -->
                                                 <div class="col-6 pr-3 mb-3">
-                                                    <label for="address_line" class="form-label">
+                                                    <label for="address" class="form-label">
                                                         Address Line
                                                     </label>
-                                                    <input type="text" class="form-control" id="address_line"
+                                                    <input type="text" class="form-control" id="address"
                                                         placeholder="Enter you address line">
                                                     <small id="address_validation" class=""></small>
                                                 </div>
 
                                                 <!-- Zip Code -->
                                                 <div class="col-6 mb-3">
-                                                    <label for="zip_code" class="form-label">
+                                                    <label for="zipcode" class="form-label">
                                                         Zip Code
-                                                        <span class="text-danger"> *</span>
                                                     </label>
-                                                    <input type="text" class="form-control" id="zip_code"
+                                                    <input type="text" class="form-control" id="zipcode"
                                                         placeholder="Enter your zip code">
                                                     <small id="zipcode_validation" class=""></small>
                                                 </div>
@@ -611,117 +610,88 @@
                                          '|', ',', '.', '<', '>', '/', '?',  '~', ']', '/'];
 
         function submitForm() {
-            username_reaction();
-            password1_reaction();
-            confirm_password_reaction();
-            first_name_reaction();
-            last_name_reaction();
-        }
-
-        function username_reaction() {
             var username = document.getElementById('username');
             var username_validation = document.getElementById('username_validation');
             var uv = validateUsername(username.value);
-            if(uv[0]) {
-                username.classList.remove('form-error');
-                username.classList.add('form-success');
-                username_validation.classList.remove('text-danger');
-                username_validation.classList.add('text-success');
-                username_validation.innerHTML = "Looks good!";
-            } else {
-                username.classList.remove('form-success');
-                username.classList.add('form-error');
-                username_validation.classList.remove('text-success');
-                username_validation.classList.add('text-danger');
-                username_validation.innerHTML = uv[1];
-            }
-        }
+            reaction_required(username, username_validation, uv);
 
-        function password1_reaction() {
             var password1 = document.getElementById('password');
             var password1_validation = document.getElementById('password_validation1');
-            var pv = validatePassword(password1.value);
-            if(pv[0]) {
-                password1.classList.remove('form-error');
-                password1.classList.add('form-success');
-                password1_validation.classList.remove('text-danger');
-                password1_validation.classList.add('text-success');
-                password1_validation.innerHTML = pv[1];
-            } else {
-                password1.classList.remove('form-success');
-                password1.classList.add('form-error');
-                password1_validation.classList.remove('text-success');
-                password1_validation.classList.add('text-danger');
-                password1_validation.innerHTML = pv[1];
-            }
-        }
+            var pw = validatePassword(password1.value);
+            reaction_required(password1, password1_validation, pw);
 
-        function confirm_password_reaction() {
-            var password1 = document.getElementById('password');
             var password2 = document.getElementById('password_confirm');
             var password2_validation = document.getElementById('password_validation2');
-            if(password1.value == password2.value) {
-                password2.classList.remove('form-error');
-                password2.classList.add('form-success');
-                password2_validation.classList.remove('text-danger');
-                password2_validation.classList.add('text-success');
-                password2_validation.innerHTML = "Looks good!";
-            } else {
-                password2.classList.remove('form-success');
-                password2.classList.add('form-error');
-                password2_validation.classList.remove('text-success');
-                password2_validation.classList.add('text-danger');
-                password2_validation.innerHTML = "Passwords do not match";
-            }
-        }
+            var pw2 = confirmPassword(password1.value, password2.value);
+            if(password1.value != "") reaction_required(password2, password2_validation, pw2);
+            else reaction_optional(password2, password2_validation);
 
-        function first_name_reaction() {
             var first_name = document.getElementById('first_name');
             var first_name_validation = document.getElementById('first_name_validation');
-            var fnv = validateName(first_name.value);
-            if(fnv[0]) {
-                first_name.classList.remove('form-error');
-                first_name.classList.add('form-success');
-                first_name_validation.classList.remove('text-danger');
-                first_name_validation.classList.add('text-success');
-                first_name_validation.innerHTML = "Looks good!";
-            } else {
-                first_name.classList.remove('form-success');
-                first_name.classList.add('form-error');
-                first_name_validation.classList.remove('text-success');
-                first_name_validation.classList.add('text-danger');
-                first_name_validation.innerHTML = fnv[1];
-            }
-        }
+            var first_name_array = validateName(first_name.value);
+            reaction_required(first_name, first_name_validation, first_name_array);
 
-        function last_name_reaction() {
             var last_name = document.getElementById('last_name');
             var last_name_validation = document.getElementById('last_name_validation');
-            var lnv = validateName(last_name.value);
-            if(lnv[0]) {
-                last_name.classList.remove('form-error');
-                last_name.classList.add('form-success');
-                last_name_validation.classList.remove('text-danger');
-                last_name_validation.classList.add('text-success');
-                last_name_validation.innerHTML = "Looks good!";
-            } else {
-                last_name.classList.remove('form-success');
-                last_name.classList.add('form-error');
-                last_name_validation.classList.remove('text-success');
-                last_name_validation.classList.add('text-danger');
-                last_name_validation.innerHTML = lnv[1];
-            }
+            var last_name_array = validateName(last_name.value);
+            reaction_required(last_name, last_name_validation, last_name_array);
+
+            address = document.getElementById('address');
+            address_validation = document.getElementById('address_validation');
+            address_array = validateAddress(address.value);
+            if(address.value == "") reaction_optional(address, address_validation);
+            else reaction_required(address, address_validation, address_array);
+
+            country = document.getElementById('country');
+            country_validation = document.getElementById('country_validation');
+            country_array = validateCountry(country.value);
+            reaction_required(country, country_validation, country_array);
+
+            zipcode = document.getElementById('zipcode');
+            zipcode_validation = document.getElementById('zipcode_validation');
+            zipcode_array = validateZipCode(zipcode.value);
+            if(zipcode.value == "") reaction_optional(zipcode, zipcode_validation);
+            else reaction_required(zipcode, zipcode_validation, zipcode_array);
+
+            sex = document.getElementById("sex");
+            sex_validation = document.getElementById('sex_validation');
+            sex_array = validateSex(sex.value);
+            reaction_required(sex, sex_validation, sex_array);
         }
 
+
+        function reaction_required(element, validation, array) {
+            if(array[0]) {
+                element.classList.remove('form-error');
+                element.classList.add('form-success');
+                validation.classList.remove('text-danger');
+                validation.classList.add('text-success');
+                validation.innerHTML = "Looks good!";
+            } else {
+                element.classList.remove('form-success');
+                element.classList.add('form-error');
+                validation.classList.remove('text-success');
+                validation.classList.add('text-danger');
+                validation.innerHTML = array[1];
+            }
+        }    
+
+        function reaction_optional(element, validation) {
+            element.classList.remove('form-error');
+            validation.classList.remove('text-danger');
+        }
+
+
         function validateUsername(username) {
+            console.log(username);
             var error;
             var flag = false;
             var n = username.length;
-            if (username == "") error = "First name is required";
-            else if (username[0] != username[0].toUpperCase()) error = "First name must start with a capital letter";
-            else if (username.length < 5) error = "First name must be at least 5 characters";
-            else if (username.length > 12) error = "First name must be less than 12 characters";
-            else if (!special_characters.includes(username[n-1]) && isNaN(username[n-1])) error = "First name must end with a special character or a number";
+            if (username == "") error = "User name is required";
+            else if (username[0] != username[0].toUpperCase()) error = "Username must start with a capital letter";
+            else if (username.length < 5) error = "Username must be at least 5 characters";
+            else if (username.length > 12) error = "Username must be less than 12 characters";
+            else if (!special_characters.includes(username[n-1]) && isNaN(username[n-1])) error = "Username must end with a special character or a number";
             else flag = true;
      
             return [flag, error];
@@ -760,6 +730,14 @@
             return [flag, error];
         }
 
+        
+        function confirmPassword(password1, password2) {
+            var error;
+            if(password1 == password2) return [true, error];
+            else error = "Passwords do not match";
+            return [false, error];
+        }
+
         function validateName(name) {
             var error;
             var flag = false;
@@ -773,6 +751,80 @@
                     true;
                 } 
             }     
+            return [flag, error];
+        }
+
+        function validateAddress(address) {
+            var error;
+            var flag = true;
+            var n = address.length;
+
+            for(var i = 0; i < n; i++){
+                if(special_characters.includes(address[i]) && address[i] != ".") {
+                    error = "Address must not include special characters except for periods";
+                    flag = false;
+                }
+            }
+
+            return [flag, error];
+        }
+
+        function validateCountry(country) {
+            var error;
+            var flag = true;
+            var n = country.length;
+            if (country.length != 2){
+                error = "Choose a country";
+                flag = false;
+            } 
+
+            for(var i = 0; i < n; i++){
+                if(country[i].toLowerCase() == country[i].toUpperCase()
+                    || country[i] != country[i].toUpperCase()) {
+                    error = "Choose a country";
+                    flag = false;
+                    break
+                }
+            }
+
+            return [flag, error];
+        }
+
+        function validateZipCode(zipcode) {
+            var error;
+            var flag = true;
+            var n = zipcode.length;
+            console.log(zipcode);
+            console.log(n);
+            if (n != 6) {
+                error = "Zip code must be in the following format: 1234AB";
+                flag = false;
+            } 
+            for(var i = 0; i < 4; i++){
+                console.log(zipcode[i])
+                if(isNaN(zipcode[i])) {
+                    error = "Zip code must be in the following format: 1234AB";
+                    flag = false;
+                    break
+                }
+            }
+            for(var i = 4; i < n; i++){
+                if(zipcode[i].toLowerCase() == zipcode[i].toUpperCase()) {
+                    error = "Zip code must be in the following format: 1234AB";
+                    flag = false;
+                    break
+                }
+            }
+            return [flag, error];
+        }
+
+        function validateSex(sex){
+            var error;
+            var flag = true;
+            if(sex != "Male" && sex != "Female" && sex != "Other"){
+                flag = false;
+                error = "Choose a valid option";
+            }
             return [flag, error];
         }
 
