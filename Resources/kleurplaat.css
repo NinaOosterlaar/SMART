@@ -1414,3 +1414,16 @@ textarea {
     max-width: 100%;
 }
 
+.success small {
+    display:none;
+}
+
+.error small {
+    display:block;
+    color: red;
+}
+
+.error input{
+    border: 1px solid red;
+}
+

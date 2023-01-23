@@ -6,10 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register</title>
-
+    <script type="text/javascript" src="register-validation.js"></script>
     <link rel="stylesheet" href="../kleurplaat.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora">
-
 </head>
 
 <body>
@@ -28,17 +27,17 @@
                                 </div>
                                 <div class="card-body">
                                     <div class="m-4">
-                                        <form action="../Dashboard/dashboard.html">
+                                        <form id="signup" method="post" onsubmit="showAlert()" >
                                             <div class="row" style="margin-bottom: 2.5rem;">
 
                                                 <!-- First Name -->
-                                                <div class="col-6 pr-3">
+                                                <div class="col-6 pr-3 success">
                                                     <label for="first_name" class="form-label">
                                                         First Name
                                                         <span class="text-danger"> *</span>
                                                     </label>
-                                                    <input type="text" class="form-control" id="first_name" placeholder="Enter your first name" required
-                                                    maxlength="50">
+                                                    <input type="text" class="form-control" id="first_name" placeholder="Enter your first name">
+                                                    <small></small>
                                                 </div>
 
                                                 <!-- Last Name -->
@@ -47,7 +46,7 @@
                                                         Last Name
                                                         <span class="text-danger"> *</span>
                                                     </label>
-                                                    <input type="text" class="form-control" id="last_name" placeholder="Enter your last name" required maxlength="50">
+                                                    <input type="text" class="form-control" id="last_name" placeholder="Enter your last name">
                                                 </div>
                                             </div>
 
@@ -59,7 +58,7 @@
                                                         Email
                                                         <span class="text-danger"> *</span>
                                                     </label>
-                                                    <input type="email" class="email-control" id="email" placeholder="Enter your email" required maxlength="50">
+                                                    <input type="text" class="email-control" id="email" placeholder="Enter your email">
                                                 </div>
 
                                                 <!-- Sex -->
@@ -523,7 +522,7 @@
                                                     Username
                                                     <span class="text-danger"> *</span>
                                                 </label>
-                                                <input type="text" class="username-control" id="Username" placeholder="Enter your username" required maxlength="50">
+                                                <input type="text" class="username-control" id="Username" placeholder="Enter your username" >
                                             </div>
 
                                             <!-- Password1 -->
@@ -532,7 +531,7 @@
                                                     Password
                                                     <span class="text-danger"> *</span>
                                                 </label>
-                                                <input type="password" class="form-control" id="password1" placeholder="Enter your password" required maxlength="50" pattern="(?=.*\d)(?=.*[\W_]).{7,}" title="Minimum of 7 characters. Should have at least one special character and one number.">
+                                                <input type="password" class="form-control" id="password1" placeholder="Enter your password" >
                                             </div>
 
                                             <!-- Password2 -->
@@ -541,7 +540,7 @@
                                                     Confirm Password
                                                     <span class="text-danger"> *</span>
                                                 </label>
-                                                <input type="password" class="form-control" id="password2" placeholder="Confirm your password" required>
+                                                <input type="password" class="form-control" id="password2" placeholder="Confirm your password" >
                                             </div>
 
                                             <div class="mb-2 d-flex justify-content-center">
