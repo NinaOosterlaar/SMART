@@ -8,34 +8,32 @@ let charactersTyped = 0;
 //Track mouse clicks
 const countMouseClicks = function() {
     mouseClicks++;
-    console.log(mouseClicks);
 }
 
 //Track time spent on page
 const trackTime = function() {
     const endDate = new Date();
     elapsedTime = endDate.getTime() - startDate.getTime();
-    console.log(elapsedTime);
     // elapsedTime contains the time spent on page in milliseconds
 };
 
 //Track key presses
 const countKeyPresses = function() {
     keyPresses++;
-    console.log(keyPresses);
 }
 
 //Track characters typed
 const countCharactersTyped = function() {
     charactersTyped++;
-    console.log(charactersTyped);
 }
 
 const displayResults = function(event) {
+    //calculate time in minutes and seconds
     const seconds = Math.floor(elapsedTime / 1000);
     const minutes = Math.floor(seconds / 60);
     const remainingSeconds = seconds % 60;
 
+    //display results
     const text = `Total number of mouse clicks: ${mouseClicks} <br/> 
     Total time spent on page: ${minutes} min ${remainingSeconds} sec <br/> 
     Total number of key presses: ${keyPresses} <br/>
@@ -48,10 +46,13 @@ const displayResults = function(event) {
 }
 
 //Add event listeners
+//for mouseclicks
 document.getElementById("register-body").addEventListener("click", countMouseClicks);
 
+//for time spent on page
 document.getElementById("sign-up-btn").addEventListener("click", trackTime);
 
+//for key presses
 document.getElementById("first_name").addEventListener("keydown", countKeyPresses);
 document.getElementById("last_name").addEventListener("keydown", countKeyPresses);
 document.getElementById("email").addEventListener("keydown", countKeyPresses);
@@ -62,6 +63,7 @@ document.getElementById("zip_code").addEventListener("keydown", countKeyPresses)
 document.getElementById("bio").addEventListener("keydown", countKeyPresses);
 document.getElementById("Username").addEventListener("keydown", countKeyPresses);
 
+//for characters typed
 document.getElementById("first_name").addEventListener("keypress", countCharactersTyped);
 document.getElementById("last_name").addEventListener("keypress", countCharactersTyped);
 document.getElementById("email").addEventListener("keypress", countCharactersTyped);
