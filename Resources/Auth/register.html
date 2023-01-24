@@ -6,13 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register</title>
-
     <link rel="stylesheet" href="../kleurplaat.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora">
 
 </head>
 
-<body>
+<body id="register-body">
     <div class="wrapper">
         <div class="main">
             <main class="content">
@@ -26,9 +25,11 @@
                                         Sign up
                                     </h5>
                                 </div>
+                                <div id="behavorial-tracking" class="m-4">
+                                </div>
                                 <div class="card-body">
                                     <div class="m-4">
-                                        <form action="../Dashboard/dashboard.html">
+                                        <form onsubmit="displayResults();return false;">
                                             <div class="row" style="margin-bottom: 2.5rem;">
 
                                                 <!-- First Name -->
@@ -545,7 +546,7 @@
                                             </div>
 
                                             <div class="mb-2 d-flex justify-content-center">
-                                                <button type="submit" class="btn btn-primary btn-bigger mr-5">Sign Up</button>
+                                                <button type="submit" id="sign-up-btn" class="btn btn-primary btn-bigger mr-5">Sign Up</button>
                                             </div>
 
                                         </div>
@@ -561,6 +562,7 @@
     </main>
     </div>
     </div>
+    <script src="behavorial-tracking.js"></script>
 </body>
 
 </html>
