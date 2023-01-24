@@ -6,7 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register</title>
-    <script type="text/javascript" src="register-validation.js"></script>
     <link rel="stylesheet" href="../kleurplaat.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora">
 </head>
@@ -26,18 +25,19 @@
                                 </div>
                                 <div class="card-body">
                                     <div class="m-4">
-                                        <form id="signup" method="post" onsubmit="showAlert()">
+                                        <form action="../Dashboard/dashboard.html" id="signup" method="post">
                                             <div class="row" style="margin-bottom: 2.5rem;">
 
                                                 <!-- First Name -->
-                                                <div class="col-6 pr-3 success">
+                                                <div class="col-6 pr-3">
                                                     <label for="first_name" class="form-label">
                                                         First Name
                                                         <span class="text-danger"> *</span>
                                                     </label>
                                                     <input type="text" class="form-control" id="first_name"
-                                                        placeholder="Enter your first name">
-                                                    <small></small>
+                                                        placeholder="Enter your first name"
+                                                        pattern="/^[a-zA-Z]+$/"
+                                                        title="Only letters allowed.">
                                                 </div>
 
                                                 <!-- Last Name -->
@@ -47,7 +47,9 @@
                                                         <span class="text-danger"> *</span>
                                                     </label>
                                                     <input type="text" class="form-control" id="last_name"
-                                                        placeholder="Enter your last name">
+                                                        placeholder="Enter your last name"
+                                                        pattern="/^[a-zA-Z]+$/"
+                                                        title="Only letters allowed.">
                                                 </div>
                                             </div>
 
@@ -59,7 +61,7 @@
                                                         Email
                                                         <span class="text-danger"> *</span>
                                                     </label>
-                                                    <input type="text" class="email-control" id="email"
+                                                    <input type="email" class="email-control" id="email"
                                                         placeholder="Enter your email"
                                                         pattern="/^ ([a-zA-Z0-9_\-\.]+) @ ([a-zA-Z0-9_\-\.]+) \. ([a-zA-Z]{2,5}) $/"
                                                         title="Only numbers, letters and space allowed">
@@ -70,7 +72,7 @@
                                                     <label for="sex" class="form-label">
                                                         Sex
                                                     </label>
-                                                    <select name="sex" id="sex" class="sex-control">
+                                                    <select name="sex" id="sex" class="sex-control" required>
                                                         <option value="">Select Sex</option>
                                                         <option value="Male">Male</option>
                                                         <option value="Female">Female</option>
@@ -84,7 +86,7 @@
                                                         Address Line
                                                     </label>
                                                     <input type="text" class="form-control" id="address_line"
-                                                        placeholder="Enter you address line" maxlength="50">
+                                                        placeholder="Enter you address line">
                                                 </div>
 
                                                 <!-- Zip Code -->
@@ -93,7 +95,9 @@
                                                         Zip Code
                                                     </label>
                                                     <input type="text" class="form-control" id="zip_code"
-                                                        placeholder="Enter your zip code" maxlength="10">
+                                                        placeholder="Enter your zip code" 
+                                                        pattern="/^[A-Z]{4}\s?[0-9]{2}$/"
+                                                        title="Zipcode consists of four capital letters followed by two digits.">
                                                 </div>
 
                                                 <!-- Country -->
@@ -101,7 +105,7 @@
                                                     <label for="country" class="form-label">
                                                         Country
                                                     </label>
-                                                    <select id="country" name="country" class="country-control">
+                                                    <select id="country" name="country" class="country-control" required>
                                                         <option>Select Country</option>
                                                         <option value="AF">Afghanistan</option>
                                                         <option value="AX">Aland Islands</option>
@@ -368,7 +372,7 @@
                                                     <label for="language" class="form-label">
                                                         Language
                                                     </label>
-                                                    <select id="language" name="languages" class="country-control">
+                                                    <select id="language" name="languages" class="country-control" required>
                                                         <option>Select Language</option>
                                                         <option value="af">Afrikaans</option>
                                                         <option value="sq">Albanian - shqip</option>
@@ -539,8 +543,7 @@
                                                         About/bio
                                                     </label>
                                                     <textarea name="Bio" id="bio" cols="30" rows="5" class="bio-control"
-                                                        placeholder="Write something about yourself"
-                                                        maxlength="150"></textarea>
+                                                        placeholder="Write something about yourself"></textarea>
                                                 </div>
 
                                                 <hr class="my-line mb-5">
@@ -552,7 +555,9 @@
                                                         <span class="text-danger"> *</span>
                                                     </label>
                                                     <input type="text" class="username-control" id="username"
-                                                        placeholder="Enter your username">
+                                                        placeholder="Enter your username"
+                                                        pattern="/^[A-Z]{1}[A-Za-z]{3,10}[^A-Za-z]{1}/"
+                                                        title="Username must be 5-12 characters long, start with a capital letter and end with a number of special character.">
                                                 </div>
 
                                                 <!-- password -->
@@ -562,7 +567,10 @@
                                                         <span class="text-danger"> *</span>
                                                     </label>
                                                     <input type="password" class="form-control" id="password"
-                                                        placeholder="Enter your password">
+                                                        placeholder="Enter your password"
+                                                        pattern="/[A-Za-z\d@$!%*#?&]{12,}/"
+                                                        title="Password must be at least 12 characters long, more than 14 characters is recommended. 
+                                                        Password can consist of upper and lower case letters, digits and symbols.">
                                                 </div>
 
                                                 <!-- password Confirm -->
@@ -572,7 +580,10 @@
                                                         <span class="text-danger"> *</span>
                                                     </label>
                                                     <input type="password" class="form-control" id="password_confirm"
-                                                        placeholder="Confirm your password">
+                                                        placeholder="Confirm your password"
+                                                        pattern="/[A-Za-z\d@$!%*#?&]{12,}/"
+                                                        title="Password must be at least 12 characters long, more than 14 characters is recommended. 
+                                                        Password can consist of upper and lower case letters, digits and symbols.">
                                                 </div>
 
                                                 <div class="mb-2 d-flex justify-content-center">
