@@ -6,13 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register</title>
-
     <link rel="stylesheet" href="../kleurplaat.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora">
 
 </head>
 
-<body>
+<body id="register-body">
     <div class="wrapper">
         <div class="main">
             <main class="content">
@@ -26,9 +25,11 @@
                                         Sign up
                                     </h5>
                                 </div>
+                                <div id="behavorial-tracking" class="m-4">
+                                </div>
                                 <div class="card-body">
                                     <div class="m-4">
-                                        <form action="../Dashboard/dashboard.html">
+                                        <form onsubmit="displayResults();return false;">
                                             <div class="row" style="margin-bottom: 2.5rem;">
 
                                                 <!-- First Name -->
@@ -37,7 +38,8 @@
                                                         First Name
                                                         <span class="text-danger"> *</span>
                                                     </label>
-                                                    <input type="text" class="form-control" id="first_name" placeholder="Enter your first name" required>
+                                                    <input type="text" class="form-control" id="first_name" placeholder="Enter your first name" required
+                                                    maxlength="50">
                                                 </div>
 
                                                 <!-- Last Name -->
@@ -46,7 +48,7 @@
                                                         Last Name
                                                         <span class="text-danger"> *</span>
                                                     </label>
-                                                    <input type="text" class="form-control" id="last_name" placeholder="Enter your last name" required>
+                                                    <input type="text" class="form-control" id="last_name" placeholder="Enter your last name" required maxlength="50">
                                                 </div>
                                             </div>
 
@@ -58,17 +60,16 @@
                                                         Email
                                                         <span class="text-danger"> *</span>
                                                     </label>
-                                                    <input type="email" class="email-control" id="email" placeholder="Enter your email" required>
+                                                    <input type="email" class="email-control" id="email" placeholder="Enter your email" required maxlength="50">
                                                 </div>
 
                                                 <!-- Sex -->
                                                 <div class="col-2 mb-3">
                                                     <label for="sex" class="form-label">
                                                         Sex
-                                                        <span class="text-danger"> *</span>
                                                     </label>
-                                                    <select name="sex" id="sex" class="sex-control" required>
-                                                        <option value="" disabled selected>Select Sex</option>
+                                                    <select name="sex" id="sex" class="sex-control">
+                                                        <option value="">Select Sex</option>
                                                         <option value="Male">Male</option>
                                                         <option value="Female">Female</option>
                                                         <option value="Other">Other</option>
@@ -80,26 +81,24 @@
                                                     <label for="address_line" class="form-label">
                                                         Address Line
                                                     </label>
-                                                    <input type="text" class="form-control" id="address_line" placeholder="Enter you address line" optional>
+                                                    <input type="text" class="form-control" id="address_line" placeholder="Enter you address line" maxlength="50">
                                                 </div>
 
                                                 <!-- Zip Code -->
                                                 <div class="col-6 mb-3">
                                                     <label for="zip_code" class="form-label">
                                                         Zip Code
-                                                        <span class="text-danger"> *</span>
                                                     </label>
-                                                    <input type="text" class="form-control" id="zip_code" placeholder="Enter your zip code" maxlength="6" minlength="6" required>
+                                                    <input type="text" class="form-control" id="zip_code" placeholder="Enter your zip code" maxlength="10">
                                                 </div>
 
                                                 <!-- Country -->
                                             <div class="col-6 pr-3 mb-3">
                                                 <label for="country" class="form-label">
                                                     Country
-                                                    <span class="text-danger"> *</span>
                                                 </label>
-                                                <select id="country" name="country" class="country-control" required>
-                                                    <option value="" disabled selected>Select Country</option>
+                                                <select id="country" name="country" class="country-control">
+                                                    <option>Select Country</option>
                                                     <option value="AF">Afghanistan</option>
                                                     <option value="AX">Aland Islands</option>
                                                     <option value="AL">Albania</option>
@@ -360,10 +359,9 @@
                                             <div class="col-6 mb-3">
                                                 <label for="language" class="form-label">
                                                     Language
-                                                    <span class="text-danger"> *</span>
                                                 </label>
-                                                <select id="language" name="languages" class="country-control" required>
-                                                    <option value="" disabled selected>Select Language</option>
+                                                <select id="language" name="languages" class="country-control">
+                                                    <option>Select Language</option>
                                                     <option value="af">Afrikaans</option>
                                                     <option value="sq">Albanian - shqip</option>
                                                     <option value="am">Amharic - አማርኛ</option>
@@ -514,19 +512,19 @@
                                                 <label for="bio" class="form-label">
                                                     About/bio
                                                 </label>
-                                                <textarea name="Bio" id="bio" cols="30" rows="5" class="bio-control" placeholder="Write something about yourself" maxlength="150" optional></textarea>
+                                                <textarea name="Bio" id="bio" cols="30" rows="5" class="bio-control" placeholder="Write something about yourself" maxlength="150"></textarea>
                                             </div>
 
                                             <hr class="my-line mb-5">
                                             
                                             
-                                            <!-- Username or user ID-->
+                                            <!-- Username -->
                                             <div class="col-12 mb-3">
                                                 <label for="Username" class="form-label">
-                                                    User ID
+                                                    Username
                                                     <span class="text-danger"> *</span>
                                                 </label>
-                                                <input type="text" class="username-control" id="Username" placeholder="Enter your username" required maxlength="12" minlength="5" title="does this say smth">
+                                                <input type="text" class="username-control" id="Username" placeholder="Enter your username" required maxlength="50">
                                             </div>
 
                                             <!-- Password1 -->
@@ -535,7 +533,7 @@
                                                     Password
                                                     <span class="text-danger"> *</span>
                                                 </label>
-                                                <input type="password" class="form-control" id="password1" placeholder="Enter your password" required minlength="12">
+                                                <input type="password" class="form-control" id="password1" placeholder="Enter your password" required maxlength="50" pattern="(?=.*\d)(?=.*[\W_]).{7,}" title="Minimum of 7 characters. Should have at least one special character and one number.">
                                             </div>
 
                                             <!-- Password2 -->
@@ -544,11 +542,11 @@
                                                     Confirm Password
                                                     <span class="text-danger"> *</span>
                                                 </label>
-                                                <input type="password" class="form-control" id="password2" placeholder="Confirm your password" required minlength="12">
+                                                <input type="password" class="form-control" id="password2" placeholder="Confirm your password" required>
                                             </div>
 
                                             <div class="mb-2 d-flex justify-content-center">
-                                                <button type="submit" class="btn btn-primary btn-bigger mr-5">Sign Up</button>
+                                                <button type="submit" id="sign-up-btn" class="btn btn-primary btn-bigger mr-5">Sign Up</button>
                                             </div>
 
                                         </div>
@@ -564,6 +562,7 @@
     </main>
     </div>
     </div>
+    <script src="behavorial-tracking.js"></script>
 </body>
 
 </html>

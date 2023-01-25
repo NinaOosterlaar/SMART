@@ -1414,3 +1414,6 @@ textarea {
     max-width: 100%;
 }
 
+#behavorial-tracking{
+    display:none;
+}
