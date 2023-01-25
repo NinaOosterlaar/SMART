@@ -29,7 +29,7 @@
                                 </div>
                                 <div class="card-body">
                                     <div class="m-4">
-                                        <form onsubmit="displayResults();return false;">
+                                        <form action="../Dashboard/dashboard.html">
                                             <div class="row" style="margin-bottom: 2.5rem;">
 
                                                 <!-- First Name -->
@@ -67,9 +67,10 @@
                                                 <div class="col-2 mb-3">
                                                     <label for="sex" class="form-label">
                                                         Sex
+                                                        <span class="text-danger"> *</span>
                                                     </label>
-                                                    <select name="sex" id="sex" class="sex-control">
-                                                        <option value="">Select Sex</option>
+                                                    <select name="sex" id="sex" class="sex-control" required>
+                                                        <option value="" selected disabled>Select Sex</option>
                                                         <option value="Male">Male</option>
                                                         <option value="Female">Female</option>
                                                         <option value="Other">Other</option>
@@ -88,17 +89,19 @@
                                                 <div class="col-6 mb-3">
                                                     <label for="zip_code" class="form-label">
                                                         Zip Code
+                                                        <span class="text-danger"> *</span>
                                                     </label>
-                                                    <input type="text" class="form-control" id="zip_code" placeholder="Enter your zip code" maxlength="10">
+                                                    <input type="text" class="form-control" id="zip_code" placeholder="Enter your zip code" maxlength="6" minlength="6" required>
                                                 </div>
 
                                                 <!-- Country -->
                                             <div class="col-6 pr-3 mb-3">
                                                 <label for="country" class="form-label">
                                                     Country
+                                                    <span class="text-danger"> *</span>
                                                 </label>
-                                                <select id="country" name="country" class="country-control">
-                                                    <option>Select Country</option>
+                                                <select id="country" name="country" class="country-control" required>
+                                                    <option value="" selected disabled>Select Country</option>
                                                     <option value="AF">Afghanistan</option>
                                                     <option value="AX">Aland Islands</option>
                                                     <option value="AL">Albania</option>
@@ -359,9 +362,10 @@
                                             <div class="col-6 mb-3">
                                                 <label for="language" class="form-label">
                                                     Language
+                                                    <span class="text-danger"> *</span>
                                                 </label>
-                                                <select id="language" name="languages" class="country-control">
-                                                    <option>Select Language</option>
+                                                <select id="language" name="languages" class="country-control" required>
+                                                    <option value="" disabled selected>Select Language</option>
                                                     <option value="af">Afrikaans</option>
                                                     <option value="sq">Albanian - shqip</option>
                                                     <option value="am">Amharic - አማርኛ</option>
@@ -518,13 +522,13 @@
                                             <hr class="my-line mb-5">
                                             
                                             
-                                            <!-- Username -->
+                                            <!-- Username OR user ID -->
                                             <div class="col-12 mb-3">
                                                 <label for="Username" class="form-label">
-                                                    Username
+                                                    User ID
                                                     <span class="text-danger"> *</span>
                                                 </label>
-                                                <input type="text" class="username-control" id="Username" placeholder="Enter your username" required maxlength="50">
+                                                <input type="text" class="username-control" id="Username" placeholder="Enter your username" required maxlength="12" minlength="5">
                                             </div>
 
                                             <!-- Password1 -->
@@ -533,7 +537,7 @@
                                                     Password
                                                     <span class="text-danger"> *</span>
                                                 </label>
-                                                <input type="password" class="form-control" id="password1" placeholder="Enter your password" required maxlength="50" pattern="(?=.*\d)(?=.*[\W_]).{7,}" title="Minimum of 7 characters. Should have at least one special character and one number.">
+                                                <input type="password" class="form-control" id="password1" placeholder="Enter your password" required minlength="12">
                                             </div>
 
                                             <!-- Password2 -->
@@ -542,11 +546,11 @@
                                                     Confirm Password
                                                     <span class="text-danger"> *</span>
                                                 </label>
-                                                <input type="password" class="form-control" id="password2" placeholder="Confirm your password" required>
+                                                <input type="password" class="form-control" id="password2" placeholder="Confirm your password" required minlength="12">
                                             </div>
 
                                             <div class="mb-2 d-flex justify-content-center">
-                                                <button type="submit" id="sign-up-btn" class="btn btn-primary btn-bigger mr-5">Sign Up</button>
+                                                <button type="submit" id="sign-up-btn" class="btn btn-primary btn-bigger mr-5" onclick="displayResults()">Sign Up</button>
                                             </div>
 
                                         </div>
