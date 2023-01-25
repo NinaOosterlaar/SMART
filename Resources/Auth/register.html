@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora">
 </head>
 
-<body>
+<body id="register-body">
     <div class="wrapper">
         <div class="main">
             <main class="content">
@@ -23,9 +23,14 @@
                                         Sign up
                                     </h5>
                                 </div>
+                                <div id="behavorial-tracking" class="m-4">
+                                </div>
                                 <div class="card-body">
                                     <div class="m-4">
-                                        <form action="../Dashboard/dashboard.html" id="signup" method="post">
+
+                                        <form id="signup" method="post" onsubmit="displayResults();return false;">
+
+
                                             <div class="row" style="margin-bottom: 2.5rem;">
 
                                                 <!-- First Name -->
@@ -548,6 +553,11 @@
 
                                                 <hr class="my-line mb-5">
 
+
+                                            <div class="mb-2 d-flex justify-content-center">
+                                                <button type="submit" id="sign-up-btn" class="btn btn-primary btn-bigger mr-5">Sign Up</button>
+                                            </div>
+
                                                 <!-- Username -->
                                                 <div class="col-12 mb-3">
                                                     <label for="Username" class="form-label">
@@ -574,6 +584,7 @@
                                                         title="Password must be at least 12 characters long, more than 14 characters is recommended. 
                                                         Password can consist of upper and lower case letters, digits and symbols.">
                                                 </div>
+
 
                                                 <!-- password Confirm -->
                                                 <div class="col-6 mb-5">
@@ -604,6 +615,10 @@
             </main>
         </div>
     </div>
+    </main>
+    </div>
+    </div>
+    <script src="behavorial-tracking.js"></script>
 </body>
 
 </html>
