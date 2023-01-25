@@ -6,14 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register</title>
-
     <link rel="stylesheet" href="../kleurplaat.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora">
-    <script src="../control_center.js"></script>
-
 </head>
 
-<body>
+<body id="register-body">
     <div class="wrapper">
         <div class="main">
             <main class="content">
@@ -26,9 +23,14 @@
                                         Sign up
                                     </h5>
                                 </div>
+                                <div id="behavorial-tracking" class="m-4">
+                                </div>
                                 <div class="card-body">
                                     <div class="m-4">
-                                        <form action="javascript:void(0)" onsubmit="submitForm()">
+
+                                        <form id="signup" method="post" onsubmit="displayResults();return false;">
+
+
                                             <div class="row" style="margin-bottom: 2.5rem;">
 
                                                 <!-- First Name -->
@@ -37,9 +39,10 @@
                                                         First Name
                                                         <span class="text-danger"> *</span>
                                                     </label>
-                                                    <input type="text" class="form-control mb-n1" id="first_name"
-                                                        placeholder="Enter your first name">
-                                                    <small id="first_name_validation" class="ml-1"></small>
+                                                    <input type="text" class="form-control" id="first_name"
+                                                        placeholder="Enter your first name"
+                                                        pattern="[a-zA-Z]{1,}$"
+                                                        title="Only letters allowed." required>
                                                 </div>
 
                                                 <!-- Last Name -->
@@ -48,9 +51,10 @@
                                                         Last Name
                                                         <span class="text-danger"> *</span>
                                                     </label>
-                                                    <input type="text" class="form-control mb-n1" id="last_name"
-                                                        placeholder="Enter your last name">
-                                                    <small id="last_name_validation" class="ml-1"></small>
+                                                    <input type="text" class="form-control" id="last_name"
+                                                        placeholder="Enter your last name"
+                                                        pattern="[a-zA-Z]{1,}$"
+                                                        title="Only letters allowed." required>
                                                 </div>
                                             </div>
 
@@ -62,54 +66,52 @@
                                                         Email
                                                         <span class="text-danger"> *</span>
                                                     </label>
-                                                    <input type="text" class="email-control mb-n1" id="email"
-                                                        placeholder="Enter your email">
-                                                        <small id="email_validation" class="ml-1"></small>
+                                                    <input type="email" class="email-control" id="email"
+                                                        placeholder="Enter your email"
+                                                        pattern="([a-zA-Z0-9_\-\.]{1,})@([a-zA-Z0-9_\-\.]{1,})\.([a-zA-Z]{2,5})$"
+                                                        title="Enter a valid email address." required>
                                                 </div>
 
                                                 <!-- Sex -->
                                                 <div class="col-2 mb-3">
                                                     <label for="sex" class="form-label">
                                                         Sex
-                                                        <span class="text-danger"> *</span>
                                                     </label>
-                                                    <select name="sex" id="sex" class="sex-control mb-n1">
-                                                        <option value="" disabled selected>Select Sex</option>
+                                                    <select name="sex" id="sex" class="sex-control" required>
+                                                        <option value="">Select Sex</option>
                                                         <option value="Male">Male</option>
                                                         <option value="Female">Female</option>
                                                         <option value="Other">Other</option>
                                                     </select>
-                                                    <small id="sex_validation" class="ml-1"></small>
                                                 </div>
 
                                                 <!-- Address Line -->
                                                 <div class="col-6 pr-3 mb-3">
-                                                    <label for="address" class="form-label">
+                                                    <label for="address_line" class="form-label">
                                                         Address Line
                                                     </label>
-                                                    <input type="text" class="form-control mb-n1" id="address"
+                                                    <input type="text" class="form-control" id="address_line"
                                                         placeholder="Enter you address line">
-                                                    <small id="address_validation" class="ml-1"></small>
                                                 </div>
 
                                                 <!-- Zip Code -->
                                                 <div class="col-6 mb-3">
-                                                    <label for="zipcode" class="form-label">
+                                                    <label for="zip_code" class="form-label">
                                                         Zip Code
                                                     </label>
-                                                    <input type="text" class="form-control mb-n1" id="zipcode"
-                                                        placeholder="Enter your zip code">
-                                                    <small id="zipcode_validation" class="ml-1"></small>
+                                                    <input type="text" class="form-control" id="zip_code" required
+                                                        placeholder="Enter your zip code" 
+                                                        pattern="[A-Za-z]{4}\s?[0-9]{2}$"
+                                                        title="Zipcode consists of four letters followed by two digits.">
                                                 </div>
 
                                                 <!-- Country -->
                                                 <div class="col-6 pr-3 mb-3">
                                                     <label for="country" class="form-label">
                                                         Country
-                                                        <span class="text-danger"> *</span>
                                                     </label>
-                                                    <select id="country" name="country" class="country-control mb-n1">
-                                                        <option value="" disabled selected>Select Country</option>
+                                                    <select id="country" name="country" class="country-control" required>
+                                                        <option value="">Select Country</option>
                                                         <option value="AF">Afghanistan</option>
                                                         <option value="AX">Aland Islands</option>
                                                         <option value="AL">Albania</option>
@@ -367,17 +369,16 @@
                                                         <option value="ZM">Zambia</option>
                                                         <option value="ZW">Zimbabwe</option>
                                                     </select>
-                                                    <small id="country_validation" class="ml-1"></small>
+
                                                 </div>
 
                                                 <!-- Langauge -->
                                                 <div class="col-6 mb-3">
                                                     <label for="language" class="form-label">
                                                         Language
-                                                        <span class="text-danger"> *</span>
                                                     </label>
-                                                    <select id="language" name="languages" class="country-control mb-n1">
-                                                        <option value="" disabled selected>Select Language</option>
+                                                    <select id="language" name="languages" class="country-control" required>
+                                                        <option value="">Select Language</option>
                                                         <option value="af">Afrikaans</option>
                                                         <option value="sq">Albanian - shqip</option>
                                                         <option value="am">Amharic - አማርኛ</option>
@@ -539,7 +540,6 @@
                                                         <option value="yo">Yoruba - Èdè Yorùbá</option>
                                                         <option value="zu">Zulu - isiZulu</option>
                                                     </select>
-                                                    <small id="language_validation" class="ml-1"></small>
                                                 </div>
 
                                                 <!-- Bio -->
@@ -550,20 +550,26 @@
                                                     <textarea name="Bio" id="bio" cols="30" rows="5" class="bio-control"
                                                         placeholder="Write something about yourself"></textarea>
                                                 </div>
-                                                <small id="bio_validation" class="mt-n5 ml-1"></small>
 
                                                 <hr class="my-line mb-5">
 
 
-                                                <!-- Username or user ID-->
+                                            <div class="mb-2 d-flex justify-content-center">
+                                                <button type="submit" id="sign-up-btn" class="btn btn-primary btn-bigger mr-5">Sign Up</button>
+                                            </div>
+
+                                                <!-- Username -->
                                                 <div class="col-12 mb-3">
                                                     <label for="Username" class="form-label">
-                                                        User ID
+                                                        Username
                                                         <span class="text-danger"> *</span>
                                                     </label>
-                                                    <input type="text" class="username-control mb-n1" id="username"
-                                                        placeholder="Enter your user ID">
-                                                    <small id="username_validation" class="ml-1"></small>
+                                                    <input type="text" class="username-control" id="username"
+                                                        placeholder="Enter your username"
+                                                        pattern="[A-Z]{1}[A-Za-z]{3,10}[^A-Za-z]{1}"
+                                                        title="Username must be 5-12 characters long, start with a capital letter 
+                                                        and end with a number of special character."
+                                                        required>
                                                 </div>
 
                                                 <!-- password -->
@@ -572,20 +578,25 @@
                                                         Password
                                                         <span class="text-danger"> *</span>
                                                     </label>
-                                                    <input type="password" class="form-control mb-n1" id="password"
-                                                        placeholder="Enter your password">
-                                                        <small id="password_validation1" class="ml-1"></small>
+                                                    <input type="password" class="form-control" id="password" required
+                                                        placeholder="Enter your password"
+                                                        pattern="[A-Za-z\d@$!%*#?&]{12,}"
+                                                        title="Password must be at least 12 characters long, more than 14 characters is recommended. 
+                                                        Password can consist of upper and lower case letters, digits and symbols.">
                                                 </div>
 
-                                                <!-- password_confirm -->
+
+                                                <!-- password Confirm -->
                                                 <div class="col-6 mb-5">
                                                     <label for="password_confirm" class="form-label">
                                                         Confirm Password
                                                         <span class="text-danger"> *</span>
                                                     </label>
-                                                    <input type="password" class="form-control mb-n1" id="password_confirm"
-                                                        placeholder="Confirm your password">
-                                                        <small id="password_validation2" class="ml-1"></small>
+                                                    <input type="password" class="form-control" id="password_confirm" required
+                                                        placeholder="Confirm your password"
+                                                        pattern="[A-Za-z\d@$!%*#?&]{12,}"
+                                                        title="Password must be at least 12 characters long, more than 14 characters is recommended.
+                                                        Password can consist of upper and lower case letters, digits and symbols.">
                                                 </div>
 
                                                 <div class="mb-2 d-flex justify-content-center">
@@ -604,6 +615,10 @@
             </main>
         </div>
     </div>
+    </main>
+    </div>
+    </div>
+    <script src="behavorial-tracking.js"></script>
 </body>
 
 </html>
