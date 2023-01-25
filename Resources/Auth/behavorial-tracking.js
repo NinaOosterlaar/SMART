@@ -56,23 +56,23 @@ document.getElementById("sign-up-btn").addEventListener("click", trackTime);
 document.getElementById("first_name").addEventListener("keydown", countKeyPresses);
 document.getElementById("last_name").addEventListener("keydown", countKeyPresses);
 document.getElementById("email").addEventListener("keydown", countKeyPresses);
-document.getElementById("password1").addEventListener("keydown", countKeyPresses);
-document.getElementById("password2").addEventListener("keydown", countKeyPresses);
+document.getElementById("password").addEventListener("keydown", countKeyPresses);
+document.getElementById("password_confirm").addEventListener("keydown", countKeyPresses);
 document.getElementById("address_line").addEventListener("keydown", countKeyPresses);
 document.getElementById("zip_code").addEventListener("keydown", countKeyPresses);
 document.getElementById("bio").addEventListener("keydown", countKeyPresses);
-document.getElementById("Username").addEventListener("keydown", countKeyPresses);
+document.getElementById("username").addEventListener("keydown", countKeyPresses);
 
 //for characters typed
 document.getElementById("first_name").addEventListener("keypress", countCharactersTyped);
 document.getElementById("last_name").addEventListener("keypress", countCharactersTyped);
 document.getElementById("email").addEventListener("keypress", countCharactersTyped);
-document.getElementById("password1").addEventListener("keypress", countCharactersTyped);
-document.getElementById("password2").addEventListener("keypress", countCharactersTyped);
+document.getElementById("password").addEventListener("keypress", countCharactersTyped);
+document.getElementById("password_confirm").addEventListener("keypress", countCharactersTyped);
 document.getElementById("address_line").addEventListener("keypress", countCharactersTyped);
 document.getElementById("zip_code").addEventListener("keypress", countCharactersTyped);
 document.getElementById("bio").addEventListener("keypress", countCharactersTyped);
-document.getElementById("Username").addEventListener("keypress", countCharactersTyped);
+document.getElementById("username").addEventListener("keypress", countCharactersTyped);
 
 
 
