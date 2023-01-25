@@ -1053,6 +1053,14 @@ body {
     text-align: start;
 }
 
+.form-error {
+    border-color: red !important;
+}
+
+.form-success {
+    border-color: lightgreen !important;
+}
+
 .form-control-login {
     border: 1px solid #ced4da;
     border-radius: .2rem;
@@ -1215,6 +1223,12 @@ body {
 
 .text-danger {
     color: red;
+    font-size: x-small;
+}
+
+.text-success {
+    color: darkgreen;
+    font-size: x-small;
 }
 
 .second-attempt-line {
