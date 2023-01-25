@@ -4,8 +4,7 @@ let special_characters =  ['[', '`', '!', '@',  '#', '$', '%', '^', '&', '*', '(
                                          '|', ',', '.', '<', '>', '/', '?',  '~', ']', '/'];
 
         // Main function that retrieves the values from the form and checks if they are valid                                 
-        function authForm() {
-            displayResults(); // Display the results of the validations
+        function submitForm() {
             var count = 0; // count is to keep track of all the validations that are true
 
             // Retrieve username and check if it is valid
@@ -118,10 +117,7 @@ let special_characters =  ['[', '`', '!', '@',  '#', '$', '%', '^', '&', '*', '(
             if(bio.value != "") message += "Bio: " + bio.value + "\n";
             alert(message);
 
-            setTimeout(function() {
-                window.location.href="../Dashboard/dashboard.html";
-           }, 3000);
-
+            window.location.href="../Dashboard/dashboard.html";
             
             
         }
